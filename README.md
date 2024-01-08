@@ -18,7 +18,7 @@ To get a local copy of the project perform the following actions:
 1. Clone the repo
 
 
-git clone https://github.com/AipovAlexander/toDo-list.git
+git clone https://github.com/AipovAlexander/chat.git
 
 
 2. Install npm packages
