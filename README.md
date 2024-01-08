@@ -1,4 +1,4 @@
-# toDo-list Pet Project
+# Chat Pet Project
 
 ## Technology Stack
 
