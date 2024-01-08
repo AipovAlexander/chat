@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div id="authScreen" class="screen">
+          <h1>Введите вашу почту</h1>
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="example@example.com"
+          />
+          <button id="nextButton">Далее</button>
+          <button class="codereadybtn btn">Есть токен</button>
+        </div>
+
+        <div id="codeScreen" class="screen">
+          <h1>Введите код подтверждения</h1>
+          <form id="codeInput">
+            <input
+              type="text"
+              id="codeInput1"
+              placeholder="Код подтверждения"
+              value=""
+            />
+            <button id="loginButton">Войти</button>
+          </form>
+        </div>
+
+        <div id="mainScreen" class="'screen">
+          <header class="header">
+            <div class="header__body">
+              <div class="navbar">
+                <div class="container nav-container">
+                  <input
+                    class="checkbox"
+                    type="checkbox"
+                    name="menu-toggle"
+                    id="menu-toggle"
+                  />
+                  <label for="menu-toggle" class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                  </label>
+
+                  <div class="menu-items">
+                    <li>
+                      <a href="#" class="profile__btn" id="openProfile"
+                        >Профиль</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="header__settings btn" id="openSettings"
+                        >Настройки</a
+                      >
+                    </li>
+                  </div>
+                </div>
+              </div>
+              <div class="search-container">
+                <input
+                  type="text"
+                  id="messageSearch"
+                  placeholder="Поиск сообщений"
+                />
+
+                <ul id="messageList">
+                  <li>Отправленно сообщение</li>
+                  <li>Полученное сообщение 1</li>
+                  <li>Отправленное сообщение 2</li>
+                </ul>
+              </div>
+              <div class="changeToken btn">Поменять токен</div>
+            </div>
+          </header>
+
+          <div class="chat">
+            <template id="received-message-template">
+              <div class="userAvatarWrap">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/IMG_Academy_Logo.svg/640px-IMG_Academy_Logo.svg.png"
+                  alt=""
+                  class="userAvatar img"
+                />
+              </div>
+              <div class="message received">
+                <div class="message-header">
+                  <span class="message-sender">Собеседник</span>
+                  <div class="message-time received-time" id="message-time">
+                    10:00 AM
+                  </div>
+                </div>
+                <div class="message-text">Привет, как дела?</div>
+                <div class="changelanguagebutton">Перевести</div>
+              </div>
+            </template>
+
+            <template id="sent-message-template">
+              <div class="message sent">
+                <div class="message-header">
+                  <span class="message-sender">Вы</span>
+                  <div class="message-time sent-time" id="message-time">
+                    10:05 AM
+                  </div>
+                </div>
+                <div class="message-text"></div>
+                <div class="changelanguagebutton">Перевести</div>
+              </div>
+            </template>
+          </div>
+          <footer class="footer">
+            <div class="footer__body">
+              <form action="submit" class="footer__form">
+                <div class="input-container">
+                  <input
+                    type="text"
+                    name="message"
+                    placeholder="Сообщение"
+                    class="input"
+                  />
+                  <button type="submit" class="input-button">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Breeze-document-send-16.svg/1200px-Breeze-document-send-16.svg.png"
+                      class="img"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div id="settingsPopup" class="popup">
+      <div class="popup-content">
+        <h2 class="popup__title">Настройки</h2>
+        <div class="vertical-popup">
+          <label for="username" class="popup__username"
+            >Имя пользователя:</label
+          >
+          <input
+            type="text"
+            id="username"
+            class="popup__input"
+            placeholder="Введите ваше имя"
+          />
+          <button id="saveSettings" class="btn">Сохранить</button>
+          <button id="closePopup" class="closeButton btn">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="profilePopup" class="popup">
+      <div class="popup-content">
+        <h2 class="popup__title">Настройки</h2>
+        <div class="vertical-popup">
+          <label for="username" class="popup__username">Поменять аватар</label>
+          <input
+            type="file"
+            id="username"
+            class="popup__input"
+            placeholder="Введите ваше имя"
+          />
+          <button id="saveSettings" class="btn">Сохранить</button>
+          <button id="closePopup" class="closeButton btn">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+
+    <script src="./index.ts" type="module"></script>
+  </body>
+</html>

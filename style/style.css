@@ -1,0 +1,427 @@
+@import url("./nullstyle.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container {
+  margin: 0 auto;
+  max-width: 500px;
+}
+.header {
+  margin: 70px 0 20px 0;
+}
+.header__body {
+  justify-content: space-between;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+.btn {
+  color: #fff;
+  padding: 7px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  transition: 0.3s ease-in;
+  margin: 5px 0 5px 0;
+}
+
+.btn:hover {
+  background-color: #007bffe6;
+}
+
+.chat {
+  min-width: 500px;
+  min-height: 500px;
+  max-height: 500px;
+  margin: 0 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+}
+
+.message {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 50%;
+  max-width: 60%;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+}
+
+.received {
+  background-color: #e0e0e0;
+  align-self: flex-start;
+}
+
+.sent {
+  background-color: #007bff;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.sent-time {
+  color: #fff;
+}
+
+.received-time {
+  color: rgb(138, 138, 138);
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.message-sender {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.message-time {
+  font-size: 12px;
+}
+
+.footer {
+}
+.footer__body {
+}
+.footer__form {
+  height: 2.5em;
+  border: 1px solid rgba(153, 150, 150, 0.524);
+  border-radius: 10px;
+}
+.input-container {
+  padding: 0 0 0 5px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.img {
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  margin: 7px 0 0 0;
+}
+
+.input-button {
+  padding: 0px 5px 5px 5px;
+  cursor: pointer;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 100px 50px;
+  max-width: 30%;
+  min-width: 30%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.vertical-popup {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+#openPopup {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.popup-content {
+}
+.popup__title {
+  margin: 0 0 20px 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.popup__username {
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+.popup__input {
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid rgba(129, 127, 127, 0.29);
+  margin: 0 0 20px 0;
+}
+
+/* Сначала стилизуем чекбокс и метку (label) */
+.checkbox {
+  display: none;
+}
+
+.hamburger-lines {
+  display: block;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #333; /* Цвет линий */
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.line1 {
+  top: 0;
+}
+
+.line2 {
+  top: 8px;
+}
+
+.line3 {
+  top: 16px;
+}
+
+/* Добавим CSS-анимацию для меню */
+.menu-items {
+  position: fixed;
+  top: 0;
+  left: -200%; /* Начальное положение меню за пределами видимости */
+  width: 300px; /* Ширина меню */
+  height: 50%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease; /* Плавный переход */
+}
+
+.menu-items li {
+  list-style: none;
+}
+
+.menu-items li a {
+  text-align: center;
+  color: #fff;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border-radius: 10px;
+  display: block;
+  margin: 10px 0 10px 0;
+}
+
+.navbar {
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Когда чекбокс "checked", меню выезжает */
+.checkbox:checked ~ .nav-container .menu-items {
+  transform: translateX(0);
+}
+
+/* Поворачиваем линии бургер-меню при клике */
+.checkbox:checked + .nav-container .hamburger-lines .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.checkbox:checked + .nav-container .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.checkbox:checked + .nav-container .hamburger-lines .line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.test {
+  border-radius: 10px;
+  width: 200px;
+}
+
+/* Пример стилей для экранов */
+.screen {
+  display: none;
+
+  /* height: 100vh; */
+}
+
+/* Стили для экрана авторизации */
+#authScreen {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#authScreen h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#authScreen input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#authScreen button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#authScreen button:hover {
+  background-color: #0056b3;
+}
+
+/* Стили для экрана ввода кода подтверждения */
+#codeScreen {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#codeScreen h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#codeScreen input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#codeScreen button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#codeScreen button:hover {
+  background-color: #0056b3;
+}
+
+.changelanguagebutton {
+  margin: 10px 0 0 0;
+  background-color: #83b6ed98;
+  padding: 5px 5px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#messageSearch {
+  text-align: center;
+  max-width: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#messageList {
+  overflow-y: auto;
+
+  position: fixed;
+  right: 0px;
+  max-height: 300px; /* Максимальная высота списка */
+  top: 130px;
+  background-color: white; /* Цвет фона по вашему выбору */
+}
+
+#messageList li {
+  word-wrap: break-word;
+  min-width: 500px;
+  margin: 5px 0;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+  display: none;
+  cursor: pointer;
+}
+
+#messageList li.active {
+  display: block;
+}
+
+.filteredDiv {
+  min-width: 500px;
+
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+  justify-content: space-between;
+  background-color: #e0e0e0a0;
+  border: 1px solid #e0e0e0a0;
+  box-shadow: 5px 5px 2px #e0e0e0a0;
+}
